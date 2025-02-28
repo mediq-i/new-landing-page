@@ -123,7 +123,7 @@ export default function Navbar() {
           </Button>
           <Button
             size="sm"
-            className="bg-primary text-primary-foreground hover:bg-primary/90 text-base lg:text-lg text-center py-5 font-medium"
+            className="bg-mediqi-primary text-primary-foreground hover:bg-primary/90 text-base lg:text-lg text-center py-5 font-medium"
           >
             Sign Up
           </Button>
