@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu } from "lucide-react";
+import { Menu, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -10,15 +10,36 @@ import {
   SheetTrigger,
   SheetTitle,
 } from "@/components/ui/sheet";
+import Image from "next/image";
+import logoSVG from "../../../public/logo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b pr-2 md:px-4 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between lg:px-16">
+    <header
+      className={`sticky top-0 z-50 w-full transition-colors duration-300 pt-2 ${
+        isScrolled ? "bg-background border-b" : "bg-transparent"
+      }`}
+    >
+      {" "}
+      <div className="c w-full flex h-16 justify-between md:px-6 md:pr-4 lg:px-12 xl:px-16 xl:pl-28">
         {/* Mobile Menu */}
-        <div className="flex items-center md:space-x-10">
+        <div className="flex items-center md:space-x-2 lg:space-x-10">
           <div className="flex md:hidden">
             <Sheet open={isOpen} onOpenChange={setIsOpen}>
               <SheetTrigger asChild>
@@ -44,13 +65,7 @@ export default function Navbar() {
                   >
                     About Us
                   </Link>
-                  <Link
-                    href="/products"
-                    className="text-lg font-medium transition-colors hover:text-primary"
-                    onClick={() => setIsOpen(false)}
-                  >
-                    Products
-                  </Link>
+
                   <Link
                     href="/services"
                     className="text-lg font-medium transition-colors hover:text-primary"
@@ -59,11 +74,11 @@ export default function Navbar() {
                     Services
                   </Link>
                   <Link
-                    href="/articles"
+                    href="/blog"
                     className="text-lg font-medium transition-colors hover:text-primary"
                     onClick={() => setIsOpen(false)}
                   >
-                    Articles
+                    Blog
                   </Link>
                 </nav>
               </SheetContent>
@@ -73,12 +88,13 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
-              <span className="font-bold text-xl">YourLogo</span>
+              {/* <span className="font-bold text-xl">YourLogo</span> */}
+              <Image priority src={logoSVG} alt="Follow us on Twitter" />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-10 mx-6">
+          <nav className="hidden md:flex items-center space-x-4 lg:space-x-10 mx-6">
             <Link
               href="/"
               className="text-sm lg:text-lg font-medium transition-colors hover:text-primary"
@@ -91,12 +107,7 @@ export default function Navbar() {
             >
               About Us
             </Link>
-            <Link
-              href="/products"
-              className="text-sm lg:text-lg font-medium transition-colors hover:text-primary"
-            >
-              Products
-            </Link>
+
             <Link
               href="/services"
               className="text-sm lg:text-lg font-medium transition-colors hover:text-primary"
@@ -104,10 +115,10 @@ export default function Navbar() {
               Services
             </Link>
             <Link
-              href="/articles"
+              href="/blog"
               className="text-sm lg:text-lg font-medium transition-colors hover:text-primary"
             >
-              Articles
+              Blog
             </Link>
           </nav>
         </div>
@@ -116,16 +127,19 @@ export default function Navbar() {
         <div className="flex items-center space-x-3 lg:space-x-5">
           <Button
             variant="outline"
-            size="sm"
-            className="sm:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base lg:text-lg text-center py-5 font-medium"
+            size="lg"
+            className="sm:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base lg:text-lg text-center font-medium rounded-full md:px-4 xl:px-8"
           >
-            Login
+            Create an account
           </Button>
           <Button
-            size="sm"
-            className="bg-mediqi-primary text-primary-foreground hover:bg-primary/90 text-base lg:text-lg text-center py-5 font-medium"
+            size="lg"
+            className="bg-primary text-primary-foreground hover:bg-primary/90 text-base lg:text-lg text-center font-medium rounded-full md:px-2 xl:px-4"
           >
-            Sign Up
+            <div className="flex items-center justify-center gap-x-1">
+              Sign Up
+              <ChevronRight strokeWidth={3} />
+            </div>
           </Button>
         </div>
       </div>
