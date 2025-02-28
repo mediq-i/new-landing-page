@@ -8,11 +8,6 @@ const manrope = Manrope({
   subsets: ["latin"],
 });
 
-// const geistMono = Geist_Mono({
-//   variable: "--font-geist-mono",
-//   subsets: ["latin"],
-// });
-
 export const metadata: Metadata = {
   title: "Mediq-i | Your Health, Our Priority",
   description: "Easily schedule your medical appointments online.",
