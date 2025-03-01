@@ -1,3 +1,4 @@
 import AboutSection from "./about-us";
+import ServicesSection from "./services";
 
-export { AboutSection };
+export { AboutSection, ServicesSection };
