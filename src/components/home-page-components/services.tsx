@@ -3,8 +3,9 @@ import {
   StaggerWrapper,
   StaggerItem,
 } from "@/helpers/animations/staggerWrapper";
+import { AnimateWrapper } from "@/helpers/animations/animateWrapper";
 import { Doctor, Hospital, Medicine } from "../icons";
-import { LaptopMinimalCheck } from "lucide-react";
+import { LaptopMinimalCheck, ChevronRight } from "lucide-react";
 
 const services = [
   {
@@ -12,28 +13,28 @@ const services = [
     title: "Chat with Doctor",
     description: "Chat or video call your doctor for fast diagnose",
     link: "/services/chat",
-    color: "text-primary",
+    text: "See Doctor",
   },
   {
     icon: <Medicine />,
     title: "Health Shop",
     description: "Browse millions of medicine to ensure your health",
     link: "/services/shop",
-    color: "text-primary",
+    text: "Browse Shop",
   },
   {
     icon: <Hospital />,
     title: "Emergency Services",
     description: "Book hospital appointment without traffic and queue",
     link: "/services/emergency",
-    color: "text-primary",
+    text: "Book Appointment",
   },
   {
-    icon: <LaptopMinimalCheck color="#635BFF" />,
+    icon: <LaptopMinimalCheck color="#181b80" size={32} />,
     title: "Medical Appointment",
     description: "Book check-up and choose your desired health check",
     link: "/services/appointment",
-    color: "text-primary",
+    text: "Book Check-up",
   },
 ];
 
@@ -41,17 +42,19 @@ export default function ServicesSection() {
   return (
     <section className="py-20 px-6 md:px-12">
       <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-12">
-          <span className="text-primary font-medium">Services</span>
-          <h2 className="text-3xl md:text-4xl font-bold mt-2">
-            We are here to help
-          </h2>
-          <p className="text-muted-foreground mt-4">
-            Choose from dozens of services to ensure your health and life.
-          </p>
-        </div>
+        <AnimateWrapper variant="fadeIn" duration={0.8}>
+          <div className="text-left mb-10 pl-2">
+            <span className="text-primary font-semibold text-lg">Services</span>
+            <h2 className="text-3xl text-accent-text md:text-[40px] font-semibold mt-2">
+              We are here to help
+            </h2>
+            <p className="text-muted-foreground mt-4">
+              Choose from dozens of services to ensure your health and life.
+            </p>
+          </div>
+        </AnimateWrapper>
 
-        <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+        <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {services.map((service, index) => (
             <StaggerItem key={index}>
               <Link
@@ -69,7 +72,8 @@ export default function ServicesSection() {
                   {service.description}
                 </p>
                 <span className="text-sm text-primary font-medium inline-flex items-center">
-                  See More →
+                  {service.text}
+                  <ChevronRight color="#181b80" strokeWidth={3} />
                 </span>
               </Link>
             </StaggerItem>

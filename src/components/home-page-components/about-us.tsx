@@ -13,7 +13,7 @@ export default function AboutSection() {
               initial={{ opacity: 0 }}
               whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              className="text-purple-shade font-semibold text-lg"
+              className="text-primary font-semibold text-lg"
             >
               About Us
             </motion.span>
@@ -35,7 +35,7 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-muted-foreground mb-8 text-accent-2"
+              className="mb-8 text-muted-foreground"
             >
               We care for our patient that's why we have the best, exclusive and
               ground-breaking technology to give you what you need.
