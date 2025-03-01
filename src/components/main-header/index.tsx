@@ -1,6 +1,5 @@
 import { MainHeaderContent } from "./MainHeaderContent";
 import { MainHeaderAnimation } from "./MainHeaderAnimation";
-import { AnimateWrapper } from "@/helpers/animations/animateWrapper";
 
 export default function MainHeader() {
   return (
