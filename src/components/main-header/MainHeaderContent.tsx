@@ -5,7 +5,7 @@ import { ChevronRight, Tags } from "lucide-react";
 export function MainHeaderContent() {
   return (
     <div className="flex flex-col justify-center items-center pt-16">
-      <div className="flex-1 max-w-6xl px-6 flex justify-center  items-center flex-col py-16">
+      <div className="flex-1 max-w-6xl px-6 flex justify-center  items-center flex-col py-12">
         <Button className="bg-ring w-fit rounded-full hover:bg-muted-foreground/50">
           <div className="flex items-center gap-x-1">
             <Tags color="#636363" />
@@ -16,7 +16,7 @@ export function MainHeaderContent() {
           </div>
         </Button>
         <h1
-          className="text-4xl md:text-6xl font-semibold mb-4 text-accent-text pt-10"
+          className="text-4xl md:text-6xl font-semibold mb-4 text-accent-text pt-10 text-center"
           id="main-heading"
         >
           Your Best Personal Health Solution

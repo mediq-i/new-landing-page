@@ -32,12 +32,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-colors duration-300 pt-2 ${
-        isScrolled ? "bg-background border-b" : "bg-transparent"
+      className={`sticky top-0 z-50 w-full transition-colors duration-800 bg-transparent h-0 ${
+        isScrolled ? "border-b bg-white h-18" : ""
       }`}
     >
-      {" "}
-      <div className="c w-full flex h-16 justify-between md:px-6 md:pr-4 lg:px-12 xl:px-16 xl:pl-28">
+      <div className="c w-full flex h-16 justify-between pr-2 md:px-6 md:pr-4 lg:px-12 xl:px-16 xl:pl-28">
         {/* Mobile Menu */}
         <div className="flex items-center md:space-x-2 lg:space-x-10">
           <div className="flex md:hidden">
@@ -65,7 +64,6 @@ export default function Navbar() {
                   >
                     About Us
                   </Link>
-
                   <Link
                     href="/services"
                     className="text-lg font-medium transition-colors hover:text-primary"
@@ -79,6 +77,12 @@ export default function Navbar() {
                     onClick={() => setIsOpen(false)}
                   >
                     Blog
+                  </Link>
+                  <Link
+                    href="/create-account"
+                    className="flex border-primary text-primary hover:text-purple-800 text-lg transition-colors font-medium rounded-full py-2"
+                  >
+                    Create an account
                   </Link>
                 </nav>
               </SheetContent>
@@ -128,7 +132,7 @@ export default function Navbar() {
           <Button
             variant="outline"
             size="lg"
-            className="sm:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base lg:text-lg text-center font-medium rounded-full md:px-4 xl:px-8"
+            className="hidden md:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base lg:text-lg text-center font-medium rounded-full md:px-4 xl:px-8"
           >
             Create an account
           </Button>
