@@ -32,11 +32,11 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full transition-colors duration-800 bg-transparent h-0 ${
-        isScrolled ? "border-b bg-white h-18" : ""
+      className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-800 ease-in-out py-4 ${
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
-      <div className="c w-full flex h-16 justify-between pr-2 md:px-6 md:pr-4 lg:px-12 xl:px-16 xl:pl-28">
+      <div className="w-full flex h-full items-center justify-between pr-2 md:px-6 md:pr-4 lg:px-12 xl:px-16 xl:pl-28">
         {/* Mobile Menu */}
         <div className="flex items-center md:space-x-2 lg:space-x-10">
           <div className="flex md:hidden">
@@ -132,7 +132,7 @@ export default function Navbar() {
           <Button
             variant="outline"
             size="lg"
-            className="hidden md:flex border-primary text-primary hover:bg-primary hover:text-primary-foreground text-base lg:text-lg text-center font-medium rounded-full md:px-4 xl:px-8"
+            className="hidden md:flex border-primary text-primary bg-transparent hover:bg-transparent hover:shadow-indigo-700 hover:text-purple-800 text-base lg:text-lg text-center font-medium rounded-full md:px-4 xl:px-8"
           >
             Create an account
           </Button>
