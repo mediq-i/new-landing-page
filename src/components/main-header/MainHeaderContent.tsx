@@ -37,7 +37,7 @@ export function MainHeaderContent() {
       </div>
       <div className="flex-1 h-[600px]">
         <Image
-          src="/webapp-img.png"
+          src="/images/webapp-img.png"
           alt="Doctor appointment booking application interface"
           width={1000}
           height={800}

@@ -11,7 +11,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import Image from "next/image";
-import logoSVG from "../../../public/logo.svg";
+import logoSVG from "../../../public/images/logo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
