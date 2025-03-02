@@ -6,6 +6,7 @@ import {
   StaggerWrapper,
   StaggerItem,
 } from "@/helpers/animations/staggerWrapper";
+import { ChevronRight } from "lucide-react";
 
 interface Article {
   id: string;
@@ -67,7 +68,7 @@ export default function ArticlesSection() {
       <div className="absolute inset-0 bg-[#070B1D] transform -skew-y-3 lg:-skew-y-2 origin-top-right" />
 
       <div className="relative z-10 px-6 md:px-12 text-white ">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto pt-4 lg:pt-12">
           <AnimateWrapper variant="slideUp" className="mb-8">
             <div className="flex justify-between items-center">
               <div>
@@ -80,9 +81,12 @@ export default function ArticlesSection() {
               </div>
               <Link
                 href="/articles"
-                className="text-primary hover:text-primary/80 transition-colors"
+                className="text-primary hover:text-purple-shade transition-colors"
               >
-                See All Articles →
+                <div className="flex items-center">
+                  See All Articles
+                  <ChevronRight />
+                </div>
               </Link>
             </div>
           </AnimateWrapper>
