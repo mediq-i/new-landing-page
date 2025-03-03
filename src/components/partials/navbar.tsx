@@ -93,7 +93,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center space-x-2">
               {/* <span className="font-bold text-xl">YourLogo</span> */}
-              <Image priority src={logoSVG} alt="Follow us on Twitter" />
+              <Image priority src={logoSVG} alt="medidi logo" />
             </Link>
           </div>
 
