@@ -121,7 +121,7 @@ export default function FaqSection() {
                           {item.question}
                         </span>
                       </AccordionTrigger>
-                      <AccordionContent className="px-6 pb-4 text-accent-text-2">
+                      <AccordionContent className="px-6 pb-4 text-accent-text-2 text-left">
                         {item.answer}
                       </AccordionContent>
                     </AccordionItem>
