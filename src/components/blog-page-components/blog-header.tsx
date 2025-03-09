@@ -5,9 +5,9 @@ import { ChevronRight } from "lucide-react";
 
 export default function BlogHero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-24 pb-16 pl-24 bg-[url(/images/blog-hero-bg.png)] bg-cover">
-      <div className="px-6 md:px-12 bg-blue-shade/70 max-w-2xl py-8 rounded-xl">
-        <AnimateWrapper variant="fadeIn" className="max-w-2xl">
+    <section className="relative min-h-screen flex items-center pt-24 pb-16 px-3 lg:pl-24 bg-[url(/images/blog-hero-bg.png)] bg-cover object-cover object-center">
+      <AnimateWrapper variant="fadeIn" duration={0.6}>
+        <div className="px-6 md:px-12 bg-blue-shade/70 w-full md:max-w-2xl py-8 rounded-xl">
           <span className="inline-block py-1 text-purple-shade mb-4">
             MEDICAL PRACTICE
           </span>
@@ -37,8 +37,8 @@ export default function BlogHero() {
               Read More <ChevronRight color="#fff" />
             </Link>
           </Button>
-        </AnimateWrapper>
-      </div>
+        </div>
+      </AnimateWrapper>
     </section>
   );
 }
