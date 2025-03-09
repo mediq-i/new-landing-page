@@ -188,18 +188,18 @@ export default function BlogPosts() {
 
   // Calculate total pages
   const totalPages = Math.ceil(articles.length / ITEMS_PER_PAGE);
-  console.log(totalPages);
 
   // Get current articles
   const getCurrentArticles = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-    const endIndex = startIndex + ITEMS_PER_PAGE;
-    return articles.slice(startIndex, endIndex);
+    return articles.slice(startIndex, startIndex + ITEMS_PER_PAGE);
   };
 
   // Handle page change
   const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return; // Prevent invalid pages
     setCurrentPage(page);
+
     // Scroll to top of the section
     window.scrollTo({
       top: document.getElementById("blog-posts")?.offsetTop || 0,
@@ -255,10 +255,9 @@ export default function BlogPosts() {
                 <PaginationContent>
                   <PaginationItem>
                     <PaginationPrevious
-                      href="/"
                       onClick={(e) => {
                         e.preventDefault();
-                        if (currentPage > 1) handlePageChange(currentPage - 1);
+                        handlePageChange(currentPage - 1);
                       }}
                       className={
                         currentPage === 1
@@ -281,7 +280,6 @@ export default function BlogPosts() {
                       return (
                         <PaginationItem key={pageNumber}>
                           <PaginationLink
-                            href="#"
                             onClick={(e) => {
                               e.preventDefault();
                               handlePageChange(pageNumber);
@@ -301,7 +299,7 @@ export default function BlogPosts() {
                         currentPage < totalPages - 2)
                     ) {
                       return (
-                        <PaginationItem key={pageNumber}>
+                        <PaginationItem key={`ellipsis-${pageNumber}`}>
                           <PaginationEllipsis />
                         </PaginationItem>
                       );
@@ -312,11 +310,9 @@ export default function BlogPosts() {
 
                   <PaginationItem>
                     <PaginationNext
-                      href="#"
                       onClick={(e) => {
                         e.preventDefault();
-                        if (currentPage < totalPages)
-                          handlePageChange(currentPage + 1);
+                        handlePageChange(currentPage + 1);
                       }}
                       className={
                         currentPage === totalPages

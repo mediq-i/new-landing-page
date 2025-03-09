@@ -35,13 +35,24 @@ export default function Navbar() {
   }, []);
 
   return (
+    // <header
+    //   className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-800 ease-in-out py-4 ${
+    //     isBlogPage
+    //       ? "bg-blue-shade/50"
+    //       : isScrolled
+    //       ? "bg-white shadow-md"
+    //       : "bg-transparent"
+    //   }`}
+    // >
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-800 ease-in-out py-4 ${
         isBlogPage
-          ? "bg-blue-shade/50"
+          ? isScrolled
+            ? "bg-[#023047] shadow-md" // Scrolled state for blog pages
+            : "bg-blue-shade/50" // Initial state for blog pages
           : isScrolled
-          ? "bg-white shadow-md"
-          : "bg-transparent"
+          ? "bg-white shadow-md" // Scrolled state for other pages
+          : "bg-transparent" // Initial state for other pages
       }`}
     >
       <div className="w-full flex h-full items-center justify-between pr-2 md:px-6 md:pr-4 lg:px-12 xl:px-16 xl:pl-28">
