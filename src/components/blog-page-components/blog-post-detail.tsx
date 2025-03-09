@@ -14,10 +14,28 @@ interface BlogDetailProps {
 }
 
 export default function BlogDetail({ article }: BlogDetailProps) {
-  // Get related articles (same category, excluding current)
-  const relatedArticles = articles
-    .filter((a) => a.category === article.category && a.id !== article.id)
-    .slice(0, 3);
+  // Get related articles (prioritize same category, then add others, excluding current)
+  const getRelatedArticles = () => {
+    // First, try to get articles from the same category
+    const sameCategory = articles.filter(
+      (a) => a.category === article.category && a.id !== article.id
+    );
+
+    // If we have 3 or more from the same category, just take the first 3
+    if (sameCategory.length >= 3) {
+      return sameCategory.slice(0, 3);
+    }
+
+    // Otherwise, get other articles (excluding current and those already selected)
+    const otherArticles = articles.filter(
+      (a) => a.id !== article.id && !sameCategory.some((sc) => sc.id === a.id)
+    );
+
+    // Combine same category articles with others to get a total of 3
+    return [...sameCategory, ...otherArticles].slice(0, 3);
+  };
+
+  const relatedArticles = getRelatedArticles();
 
   return (
     <main className="min-h-screen">
@@ -33,7 +51,7 @@ export default function BlogDetail({ article }: BlogDetailProps) {
               Back to Blog
             </Link>
 
-            {/* <span className="inline-block px-3 py-1 bg-transparent text-white border border-white rounded-full text-sm mb-3">
+            {/* <span className="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm mb-4">
               {article.category}
             </span> */}
 
@@ -66,16 +84,17 @@ export default function BlogDetail({ article }: BlogDetailProps) {
             {/* Featured Image */}
             <div className="relative h-[300px] md:h-[500px] rounded-xl overflow-hidden mb-12">
               <Image
-                src={article.image}
+                src={article.image || "/placeholder.svg"}
                 alt={article.title}
                 fill
                 className="object-cover"
+                sizes="(max-width: 768px) 100vw, 60vw"
                 priority
               />
             </div>
 
             {/* Article Text */}
-            <div className="prose prose-lg max-w-none">
+            <div className="max-w-none flex flex-col gap-y-2">
               <p className="text-lg text-accent-text-2 mb-6">
                 {article.excerpt}
               </p>
@@ -173,6 +192,7 @@ export default function BlogDetail({ article }: BlogDetailProps) {
                           src={relatedArticle.image || "/placeholder.svg"}
                           alt={relatedArticle.title}
                           fill
+                          sizes="(max-width: 768px) 100vw, 60vw"
                           className="object-cover transition-transform duration-300 group-hover:scale-105"
                         />
                         <div className="absolute bottom-4 left-4">

@@ -23,7 +23,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 10) {
+      if (window.scrollY > 50) {
         setIsScrolled(true);
       } else {
         setIsScrolled(false);
@@ -31,19 +31,16 @@ export default function Navbar() {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Initial check in case page is loaded scrolled down
+    handleScroll();
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
-    // <header
-    //   className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-800 ease-in-out py-4 ${
-    //     isBlogPage
-    //       ? "bg-blue-shade/50"
-    //       : isScrolled
-    //       ? "bg-white shadow-md"
-    //       : "bg-transparent"
-    //   }`}
-    // >
     <header
       className={`fixed top-0 left-0 right-0 z-50 w-full transition-all duration-800 ease-in-out py-4 ${
         isBlogPage
