@@ -6,7 +6,6 @@ import {
   StaggerWrapper,
   StaggerItem,
 } from "@/helpers/animations/staggerWrapper";
-import { Button } from "@/components/ui/button";
 import { type Article, articles } from "@/components/partials/data";
 
 interface BlogDetailProps {
@@ -153,7 +152,7 @@ export default function BlogDetail({ article }: BlogDetailProps) {
             </div>
 
             {/* Share Buttons */}
-            <div className="flex items-center gap-4 mt-12 pt-8 border-t border-gray-200">
+            {/* <div className="flex items-center gap-4 mt-12 pt-8 border-t border-gray-200">
               <span className="font-medium text-accent-text">
                 Share this article:
               </span>
@@ -166,7 +165,7 @@ export default function BlogDetail({ article }: BlogDetailProps) {
                   <Share2 className="w-4 h-4" />
                 </Button>
               </div>
-            </div>
+            </div> */}
           </AnimateWrapper>
         </div>
       </section>
@@ -177,7 +176,7 @@ export default function BlogDetail({ article }: BlogDetailProps) {
           <div className="max-w-7xl mx-auto">
             <AnimateWrapper variant="fadeIn">
               <h2 className="text-2xl md:text-3xl font-semibold text-accent-text mb-12">
-                Related Articles
+                Read More Articles
               </h2>
 
               <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

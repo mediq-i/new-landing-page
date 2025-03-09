@@ -229,7 +229,7 @@ export default function BlogPosts() {
                       className="object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute bottom-4 left-4">
-                      <span className="inline-block px-3 py-1 bg-primary/20 text-primary rounded-full text-sm">
+                      <span className="inline-block px-2 py-1 bg-transparent text-white border border-white rounded-full text-xs mb-1">
                         {article.category}
                       </span>
                     </div>
