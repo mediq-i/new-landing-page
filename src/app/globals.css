@@ -45,6 +45,7 @@
   --accent-text: #3b3956;
   --accent-text-2: #818b9c;
   --purple-shade: #635bff;
+  --blue-shade: #0b0f0e3d;
 }
 
 .dark {
@@ -122,6 +123,7 @@
   --color-accent-text: var(--accent-text);
   --color-accent-text-2: var(--accent-text-2);
   --color-purple-shade: var(--purple-shade);
+  --color-blue-shade: var(--blue-shade);
 }
 
 @layer base {
@@ -132,7 +134,7 @@
     @apply bg-background text-foreground font-manrope;
   }
 }
-
+/* 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -150,6 +152,6 @@
       #d460a3 90%,
       #ffcccc 95%,
       #ffffff 100%
-    );
+    ); 
   }
-}
+} */
