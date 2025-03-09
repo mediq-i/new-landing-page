@@ -238,14 +238,34 @@ export const articles: Article[] = [
     author: "HANS DUYFELT",
     date: "May 12, 2022",
   },
-  //   {
-  //     id: "7",
-  //     title: "Mother and Children : How to take care of your born child",
-  //     excerpt:
-  //       "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed.",
-  //     image: "/images/baby.png",
-  //     category: "PREGNANCY",
-  //     author: "HANS DUYFELT",
-  //     date: "May 12, 2022",
-  //   },
+  {
+    id: "7",
+    title: "Mother and Children : How to take care of your born child",
+    excerpt:
+      "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed.",
+    image: "/images/baby.png",
+    category: "PREGNANCY",
+    author: "HANS DUYFELT",
+    date: "May 12, 2022",
+  },
+  {
+    id: "8",
+    title: "Health Care Through the Back Door: The Dangers of Nurse Visits",
+    excerpt:
+      "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed. Nunc nunc tincidunt dignissim elit amet.",
+    image: "/images/drip-pic.png",
+    category: "MEDICAL PRACTICE",
+    author: "HANS DUYFELT",
+    date: "May 12, 2022",
+  },
+  {
+    id: "9",
+    title: "Health Care Through the Back Door: The Dangers of Nurse Visits",
+    excerpt:
+      "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed. Nunc nunc tincidunt dignissim elit amet.",
+    image: "/images/drip-pic.png",
+    category: "HEALTHCARE",
+    author: "HANS DUYFELT",
+    date: "May 12, 2022",
+  },
 ];
