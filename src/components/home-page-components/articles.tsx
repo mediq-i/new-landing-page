@@ -7,59 +7,7 @@ import {
   StaggerItem,
 } from "@/helpers/animations/staggerWrapper";
 import { ChevronRight } from "lucide-react";
-
-interface Article {
-  id: string;
-  title: string;
-  excerpt: string;
-  image: string;
-  category: string;
-  author: string;
-  date: string;
-}
-
-const articles: Article[] = [
-  {
-    id: "1",
-    title: "Health Care Through the Back Door: The Dangers of Nurse Visits",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed. Nunc nunc tincidunt dignissim elit amet.",
-    image: "/images/drip-pic.png",
-    category: "MEDICAL PRACTICE",
-    author: "HANS DUYFELT",
-    date: "May 12, 2022",
-  },
-  {
-    id: "2",
-    title: "Health Care Through the Back Door: The Dangers of Nurse Visits",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed. Nunc nunc tincidunt dignissim elit amet.",
-    image: "/images/drip-pic.png",
-    category: "HEALTHCARE",
-    author: "HANS DUYFELT",
-    date: "May 12, 2022",
-  },
-  {
-    id: "3",
-    title: "The Biggest Reason on Why Heart is The Most Crazy Thing",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed.",
-    image: "/images/heart.png",
-    category: "HEART",
-    author: "HANS DUYFELT",
-    date: "May 12, 2022",
-  },
-  {
-    id: "4",
-    title: "Mother and Children : How to take care of your born child",
-    excerpt:
-      "Lorem ipsum dolor sit amet consectetur. Porttibus and pulvinar massa sed.",
-    image: "/images/baby.png",
-    category: "PREGNANCY",
-    author: "HANS DUYFELT",
-    date: "May 12, 2022",
-  },
-];
+import { articles } from "../partials/data";
 
 export default function ArticlesSection() {
   return (
@@ -136,7 +84,7 @@ export default function ArticlesSection() {
 
             {/* Other Articles */}
             <StaggerWrapper className="space-y-6">
-              {articles.slice(1).map((article) => (
+              {articles.slice(1, 4).map((article) => (
                 <StaggerItem key={article.id}>
                   <Link
                     href={`/articles/${article.id}`}
