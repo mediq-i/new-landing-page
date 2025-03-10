@@ -27,9 +27,9 @@ export default function ServicesHero() {
           </AnimateWrapper>
           <AnimateWrapper variant="slideLeft">
             <p className="text-accent-text-2 max-w-lg">
-              Choose Healthcare services encompasses a wide range of medical,
+              Choose Healthcare services that encompass a wide range of medical,
               preventive, diagnostic, therapeutic, and supportive services aimed
-              at promoting, maintaining, or restoring health
+              at promoting, maintaining, or restoring your health
             </p>
           </AnimateWrapper>
         </div>
@@ -37,7 +37,7 @@ export default function ServicesHero() {
         {/* Tabs */}
         <Tabs defaultValue="general" className="w-full">
           <AnimateWrapper variant="slideUp">
-            <TabsList className="flex h-auto bg-transparent mb-12 border-b border-gray-200 w-full justify-start gap-8 p-0 rounded-none">
+            <TabsList className="flex flex-wrap h-auto bg-transparent mb-12 border-b border-gray-200 w-full justify-start gap-8 p-0 rounded-none">
               <TabsTrigger
                 value="general"
                 className="pb-4 text-lg font-medium data-[state=active]:text-primary data-[state=active]:border-b-2 data-[state=active]:border-primary data-[state=active]:-mb-[2px] data-[state=inactive]:text-accent-text-2 bg-transparent rounded-none"
@@ -64,7 +64,7 @@ export default function ServicesHero() {
             <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {generalServices.map((service, index) => (
                 <StaggerItem key={index}>
-                  <div className="p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors group">
+                  <div className="p-6 rounded-xl bg-gray-50 h-full hover:bg-gray-100 transition-colors group">
                     <div className="mb-4">
                       <service.icon className="w-8 h-8 text-primary" />
                     </div>
@@ -92,7 +92,7 @@ export default function ServicesHero() {
             <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {specialServices.map((service, index) => (
                 <StaggerItem key={index}>
-                  <div className="p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors group">
+                  <div className="p-6 rounded-xl bg-gray-50 h-full hover:bg-gray-100 transition-colors group">
                     <div className="mb-4">
                       <service.icon className="w-8 h-8 text-primary" />
                     </div>
@@ -120,7 +120,7 @@ export default function ServicesHero() {
             <StaggerWrapper className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {healthSupport.map((service, index) => (
                 <StaggerItem key={index}>
-                  <div className="p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors group">
+                  <div className="p-6 rounded-xl bg-gray-50 h-full hover:bg-gray-100 transition-colors group">
                     <div className="mb-4">
                       <service.icon className="w-8 h-8 text-primary" />
                     </div>

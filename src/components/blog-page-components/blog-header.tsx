@@ -17,9 +17,9 @@ export default function BlogHero() {
           </h1>
 
           <p className="text-gray-300 text-lg mb-8">
-            Whether you're a seasoned copywriter or a beginner, Rapid
-            Copywriting is the perfect tool to help you take your copywriting
-            skill.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute
+            irure dolor in reprehenderit in voluptate velit esse cillum dolore
+            eu fugiat nulla pariatur
           </p>
 
           <div className="flex items-center gap-2 mb-8">

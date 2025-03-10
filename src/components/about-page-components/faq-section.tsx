@@ -7,76 +7,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-
-type FaqCategory = "general" | "payment" | "security" | "terms" | "policy";
-
-const faqData: Record<FaqCategory, { question: string; answer: string }[]> = {
-  general: [
-    {
-      question: "What is Doctor+?",
-      answer:
-        "Doctor+ is a healthcare platform that provides services such as chat with doctors, visit nearest hospitals, buy your medicine, check on labs and update your information about health, all in one package!",
-    },
-    {
-      question: "What do I get if I use Doctor+?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo. Excepteur sint occaecat cupidatat non proident.",
-    },
-    {
-      question: "Where can I download the app and dashboard?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
-    },
-  ],
-  payment: [
-    {
-      question: "What payment methods are accepted?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    },
-    {
-      question: "How do I get a refund?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-  ],
-  security: [
-    {
-      question: "How secure is my medical data?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis.",
-    },
-    {
-      question: "Who has access to my health information?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.",
-    },
-  ],
-  terms: [
-    {
-      question: "What are the terms of service?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit.",
-    },
-    {
-      question: "Can I cancel my subscription?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-  ],
-  policy: [
-    {
-      question: "What is your privacy policy?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident.",
-    },
-    {
-      question: "How is my data used?",
-      answer:
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    },
-  ],
-};
+import { faqData, type FaqCategory } from "../partials/data";
 
 export default function FaqSection() {
   return (

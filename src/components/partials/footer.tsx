@@ -18,6 +18,10 @@ import footerIcon from "../../../public/images/mediqi-icon.svg";
 import { ChevronRight } from "lucide-react";
 
 export default function Footer() {
+  let currentDate = new Date();
+  let currentYear = currentDate.getFullYear();
+  console.log(currentYear);
+
   return (
     <footer className="bg-[#070B1D] text-white py-16">
       <div className="container mx-auto px-6">
@@ -133,7 +137,7 @@ export default function Footer() {
           <div className="mt-16 pt-8 border-t border-gray-800">
             <div className="flex flex-col md:flex-row justify-between items-center gap-4">
               <p className="text-gray-400 text-sm">
-                Copyright © 2023 Doctor. All rights reserved.
+                Copyright © {currentYear} Mediq-i. All rights reserved.
               </p>
               <div className="flex gap-6">
                 {[
