@@ -20,7 +20,6 @@ import { ChevronRight } from "lucide-react";
 export default function Footer() {
   let currentDate = new Date();
   let currentYear = currentDate.getFullYear();
-  console.log(currentYear);
 
   return (
     <footer className="bg-[#070B1D] text-white py-16">
