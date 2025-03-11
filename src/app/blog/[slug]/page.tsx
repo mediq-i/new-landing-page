@@ -1,17 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowLeft, Calendar, User, Clock, Share2 } from "lucide-react";
+import { ArrowLeft, Calendar, User } from "lucide-react";
 import { AnimateWrapper } from "@/helpers/animations/animateWrapper";
-import {
-  StaggerWrapper,
-  StaggerItem,
-} from "@/helpers/animations/staggerWrapper";
-import { type Article, articles } from "@/components/partials/data";
 
 import { PortableText, type SanityDocument } from "next-sanity";
 import imageUrlBuilder from "@sanity/image-url";
 import type { SanityImageSource } from "@sanity/image-url/lib/types/types";
 import { client } from "@/sanity/client";
+import { portableTextComponents } from "@/components/portable-text/portable-text-component";
 
 const POST_QUERY = `*[_type == "post" && slug.current == $slug][0]`;
 
@@ -89,21 +85,30 @@ export default async function BlogDetail({
             <div className="">
               {Array.isArray(post.excerpt) && (
                 <div className="mb-4 text-xl font-bold">
-                  <PortableText value={post.excerpt} />
+                  <PortableText
+                    value={post.excerpt}
+                    components={portableTextComponents}
+                  />
                 </div>
               )}
 
               <div>
                 {Array.isArray(post.body) ? (
-                  <PortableText value={post.body} />
+                  <PortableText
+                    value={post.body}
+                    components={portableTextComponents}
+                  />
                 ) : (
                   ""
                 )}
               </div>
 
               {Array.isArray(post.quote) && (
-                <div className="mb-4 text-lg border-gray-600 pl-2 border-l-4 font-bold mt-4">
-                  <PortableText value={post.quote} />
+                <div className="mb-4 mt-4">
+                  <PortableText
+                    value={post.quote}
+                    components={portableTextComponents}
+                  />
                 </div>
               )}
             </div>
