@@ -56,7 +56,7 @@ export default function ArticlesSection() {
                       alt={articles[0].title}
                       width={600}
                       height={200}
-                      className="object-cover transition-transform duration-300 group-hover:scale-105"
+                      className="object-cover transition-transform w-full duration-300 group-hover:scale-105 rounded-lg"
                     />
                     <span className="absolute bottom-0 left-5 inline-block px-3 py-1 bg-transparent text-white border border-white rounded-full text-sm mb-3">
                       {articles[0].category}

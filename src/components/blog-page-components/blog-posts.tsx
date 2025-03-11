@@ -26,8 +26,6 @@ const options = { next: { revalidate: 30 } };
 export default async function BlogPosts() {
   const posts = await client.fetch<SanityDocument[]>(POSTS_QUERY, {}, options);
 
-  console.log(posts);
-
   return (
     <section id="blog-posts" className="py-20 px-6 md:px-12 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -44,8 +42,6 @@ export default async function BlogPosts() {
                 const postImageUrl = article.image
                   ? urlFor(article.image)
                   : null;
-
-                console.log(article.title);
 
                 return (
                   <StaggerItem key={article._id}>

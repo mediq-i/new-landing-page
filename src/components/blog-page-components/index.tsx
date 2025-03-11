@@ -1,6 +1,6 @@
 import BlogHero from "./blog-header";
 import BlogPosts from "./blog-posts";
-import BlogDetail from "./blog-post-detail";
-import BlogPostsWithPagination from "./blog-posts-with-pagination";
+// import BlogPostsWithPagination from "./blog-posts-with-pagination";
+import PostPage from "./blog-detail-sanity";
 
-export { BlogHero, BlogPosts, BlogDetail, BlogPostsWithPagination };
+export { BlogHero, BlogPosts, PostPage };
