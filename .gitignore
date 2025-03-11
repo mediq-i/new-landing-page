@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# a file i want to ignore for now
+/src/components/blog-page-components/blog-posts-with-pagination.tsx

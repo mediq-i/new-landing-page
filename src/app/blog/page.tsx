@@ -1,8 +1,4 @@
-import {
-  BlogHero,
-  BlogPosts,
-  SanityBlogPage,
-} from "@/components/blog-page-components";
+import { BlogHero, BlogPosts } from "@/components/blog-page-components";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -16,8 +12,7 @@ export default function BlogPage() {
   return (
     <main>
       <BlogHero />
-      {/* <BlogPosts /> */}
-      <SanityBlogPage />
+      <BlogPosts />
     </main>
   );
 }
